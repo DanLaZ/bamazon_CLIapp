@@ -47,7 +47,7 @@ function promptTest() {
 
     ]).then(function(id) {
 
-        printSelectedFish(id);
+        newStock(id);
 
 
     })
@@ -65,11 +65,11 @@ function printProducts() {
       for (var i = 0; i < results.length; i++) { 
         var id = chalk.white(results[i].item_id);
         var name = chalk.yellow(results[i].product_name);
-        var price = chalk.red(results[i].price);
+        var price = chalk.magenta(results[i].price);
         var quantity = chalk.red(results[i].stock_quantity);
         var spacer = "\n";
         var line = chalk.white.bgWhite("===============================");
-        console.log(spacer + line + spacer + chalk.white("Id #") + id + " " + "- " + name + spacer + chalk.blue("Cost ") + chalk.green("$") + price + spacer + chalk.blue("Stock Amount: ") + quantity + spacer + line + spacer);
+        console.log(spacer + line + spacer + chalk.white("Id: #") + id + " " + "- " + name + spacer + chalk.blue("Cost:") + chalk.green("$") + price + spacer + chalk.blue("Stock Amount:") + quantity + spacer + line + spacer);
       }
     });   
 }
@@ -90,6 +90,30 @@ function printSelectedFish(id) {
       var line = chalk.white.bgWhite("===============================");
       console.log(spacer + line + spacer + name + spacer + chalk.green("$") + price + spacer + chalk.blue("Stock Amount:") + quantity + spacer + line + spacer);
      
+    });
+}
+
+function newStock(id) {
+    let sql = `SELECT * FROM products`;
+    connection.query(sql, (error, results, fields) => {
+        if (error) {
+          return console.error(error.message);
+        }
+        var resultIndex = id.idInput - 1;
+        var userChoice = results[resultIndex];
+
+        var orderAmount = id.fishAmount;
+        var quantity = chalk.red(userChoice.stock_quantity);
+        var updatedStock = quantity - orderAmount;
+ 
+        // var price = chalk.magenta(userChoice.price);        
+        // var name = chalk.yellow(userChoice.product_name);
+        // var spacer = "\n";
+        // var line = chalk.white.bgWhite("===============================");
+        // console.log(spacer + line + spacer + name + spacer + chalk.green("$") + price + spacer + chalk.blue("Stock Amount:") + updatedStock + spacer + line + spacer);
+
+        console.log(updatedStock);
+       
     });
 }
 
