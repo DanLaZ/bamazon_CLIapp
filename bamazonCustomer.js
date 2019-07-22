@@ -84,7 +84,7 @@ var postProducts = function() {
           var resultIndex = id.idInput - 1;
           var userChoice = results[resultIndex];
         
-          var price = chalk.green(userChoice.price);
+          var price = chalk.magenta(userChoice.price);
           var quantity = chalk.red(userChoice.stock_quantity);
           var name = chalk.yellow(userChoice.product_name);
           var spacer = "\n";
