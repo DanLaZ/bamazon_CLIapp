@@ -47,7 +47,8 @@ function promptTest() {
 
     ]).then(function(id) {
 
-        newStock(id);
+
+      newStock(id);
 
 
     })
@@ -82,6 +83,7 @@ function printSelectedFish(id) {
       }
       var resultIndex = id.idInput - 1;
       var userChoice = results[resultIndex];
+
     
       var price = chalk.magenta(userChoice.price);
       var quantity = chalk.red(userChoice.stock_quantity);
@@ -94,28 +96,48 @@ function printSelectedFish(id) {
 }
 
 function newStock(id) {
-    let sql = `SELECT * FROM products`;
-    connection.query(sql, (error, results, fields) => {
+    let sql = `SELECT * FROM products WHERE item_id = ${id.idInput}`;
+    connection.query(sql, (error, result, fields) => {
         if (error) {
           return console.error(error.message);
         }
-        var resultIndex = id.idInput - 1;
-        var userChoice = results[resultIndex];
 
-        var orderAmount = id.fishAmount;
-        var quantity = chalk.red(userChoice.stock_quantity);
-        var updatedStock = quantity - orderAmount;
+        var requestedAmount = id.fishAmount;
+        var stock = result[0].stock_quantity;
+        var price = result[0].price;
+        var totalCost = price * requestedAmount;
+        if(requestedAmount > stock) {
+          console.log("Insufficient quantity!");
+        }
+        else {
+          
+          var sql2 = `UPDATE products SET stock_quantity = ${stock - requestedAmount} WHERE item_id = ${id.idInput}`
+          connection.query(sql2, (error, result, fields) => {
+            if (error) {
+              return console.error(error.message);
+           } 
+           console.log("Your order has been made and cost $" + totalCost);
+          });
+          
+        }
+        
+        // var resultIndex = id.idInput - 1;
+        // var userChoice = results[resultIndex];
+
+        // var orderAmount = id.fishAmount;
+        // var quantity = userChoice.stock_quantity;
+        // var updatedStock = quantity - orderAmount;
  
-        // var price = chalk.magenta(userChoice.price);        
+            
         // var name = chalk.yellow(userChoice.product_name);
         // var spacer = "\n";
         // var line = chalk.white.bgWhite("===============================");
         // console.log(spacer + line + spacer + name + spacer + chalk.green("$") + price + spacer + chalk.blue("Stock Amount:") + updatedStock + spacer + line + spacer);
 
-        console.log(updatedStock);
-       
-    });
+      
+  });
 }
+
 
 printProducts();
 promptTest();
