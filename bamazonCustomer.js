@@ -1,7 +1,5 @@
 var inquirer = require('inquirer');
 const chalk = require('chalk');
-var CLI = require('clui'),
-clc = require('cli-color');
 var figlet = require('figlet');
 require("dotenv").config();
 
@@ -35,8 +33,6 @@ console.log(
 
 var postProducts = function() {
   
- 
-
   inquirer
   .prompt([
     {

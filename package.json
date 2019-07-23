@@ -1,0 +1,29 @@
+{
+  "name": "bamazon_cliapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bamazonCustomer.js",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "clui": "^0.3.6",
+    "dotenv": "^8.0.0",
+    "figlet": "^1.2.3",
+    "inquirer": "^6.5.0",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "bamazonCustomer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanLaZ/bamazon_CLIapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanLaZ/bamazon_CLIapp/issues"
+  },
+  "homepage": "https://github.com/DanLaZ/bamazon_CLIapp#readme"
+}
