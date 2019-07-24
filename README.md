@@ -20,7 +20,7 @@ This app is a mock online store.
 <br>
 <br>
 ## How to Use
-Start App by typing `node bamazonCustomer.js` in your command line terminal.
+Start App by typing `node bamazonCustomer.js` in your Command Prompt or Terminal.
 
 ## NPMs Used
 * [inquirer](https://www.npmjs.com/package/i) 
