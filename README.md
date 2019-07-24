@@ -6,7 +6,7 @@ This app is a mock online store.
 ## Inquier Prompts
 
 **1st Question**
-* Type in the id# of the fish you would like to purchase? 
+* Would you like to purchase fish? 
 
 **2nd Question**
 * Type in the id# of the fish you would like to purchase.
