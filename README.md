@@ -6,19 +6,23 @@ This app is a mock online store.
 When the app is ran it will first ask the user if they would like to shop with us.
 ## Inquier Prompts
 <br>
+
 ### 1st Question
 <br>
 Type in the id# of the fish you would like to purchase?
 <br>
+
 ### 2nd Question
 <br>
 Type in the id# of the fish you would like to purchase.
 <br>
+
 ### 3rd Question
 <br>
 How many fish would you like to buy?
 <br>
 <br>
+
 ![](bamazon.gif)
 <br>
 <br>
