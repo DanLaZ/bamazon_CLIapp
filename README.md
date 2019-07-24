@@ -2,8 +2,7 @@
 
 ## Overview
 This app is a mock online store. 
-<br>
-When the app is ran it will first ask the user if they would like to shop with us.
+
 ## Inquier Prompts
 
 **1st Question**
