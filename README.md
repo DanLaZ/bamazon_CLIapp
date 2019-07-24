@@ -8,26 +8,25 @@ When the app is ran it will first ask the user if they would like to shop with u
 <br>
 
 ### 1st Question
-<br>
-Type in the id# of the fish you would like to purchase?
+* Type in the id# of the fish you would like to purchase?
 <br>
 
 ### 2nd Question
-<br>
-Type in the id# of the fish you would like to purchase.
+* Type in the id# of the fish you would like to purchase.
 <br>
 
 ### 3rd Question
+* How many fish would you like to buy?
 <br>
-How many fish would you like to buy?
 <br>
-<br>
+
+## App Demo
 
 ![](bamazon.gif)
 <br>
 <br>
 ## How to Use
-Start App with node bamazonCustomer.js.
+Start App with `node bamazonCustomer.js`.
 
 ## NPMs Used
 [inquirer](https://www.npmjs.com/package/i) 
