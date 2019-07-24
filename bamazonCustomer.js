@@ -59,7 +59,7 @@ function orderPrompt() {
     {
       type: "number",
       name: "idInput",
-      message: "Type in the id# of the fish you would like the purchase"
+      message: "Type in the id# of the fish you would like to purchase"
     
     },
     {
